@@ -3,8 +3,7 @@ services:
   ssidd01111:
     image: san:san
     volumes:
-      - /home/ubuntu/docker/mysql.sh /mysql
-
+      - /home/ubuntu/docker/mysql.sh:/mysql/mysql.sh
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: root
