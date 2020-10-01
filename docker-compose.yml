@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  ssidd01111:
+    image: san:san
+    volumes:
+      - /home/ubuntu/docker/mysql.sh /mysql
+
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    command: ["sleep 10 && /mysql/mysql.sh"]
+    ports:
+      - 3306:3306
+        #volumes:
+        # - mysql_db_data_container:/var/lib/mysql
